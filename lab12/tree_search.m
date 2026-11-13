@@ -30,7 +30,7 @@ function [found_at, indices] = tree_search_inner(adjacency, data, num, curr_node
     for i = 1:size(adjacency, 1)
 
         % Only search if the child exists and value is not found
-        if adjacency(curr_node, i) == 1
+        if adjacency(curr_node, i) == 1 && found_at == -1
 
             % Recursively search child node i
             [found_at, next_indices] = tree_search_inner(adjacency, data, num, i);
